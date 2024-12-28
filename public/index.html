@@ -35,19 +35,19 @@
 
 <body class="bg-gray-900 text-gray-300 min-h-screen flex flex-col items-center">
     <!-- Header -->
-    <header class="bg-gray-800 w-full p-4 text-center text-lg font-bold">
-        Chat with Devil
+    <header class="bg-gray-800 w-full  text-center text-lg font-bold">
+        Chat with ME
     </header>
+    <button id="new-chat-btn" class="absolute right-0  bg-purple-600 hover:bg-purple-700 text-white py-1 px-2 mb-2 rounded-md">
+        +
+    </button>
 
     <!-- Chat Container -->
-    <div class="flex flex-col items-center w-full max-w-3xl mt-6">
+    <div class=" flex flex-col items-center w-full max-w-3xl mt-6">
         <!-- Button to Start a New Chat -->
-        <button id="new-chat-btn" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-8 mb-4 rounded-md">
-            Start New Chat
-        </button>
-
+        
         <!-- Chat Display Area -->
-        <div id="chat-display" class="bg-gray-700 w-full h-96 rounded-md p-4 overflow-y-auto space-y-4">
+        <div id="chat-display" class="bg-gray-700 w-full h-auto rounded-md p-4 overflow-y-auto space-y-4">
             <!-- Messages will be dynamically inserted here -->
         </div>
 
@@ -59,23 +59,23 @@
                     class="w-full p-2 rounded-md bg-gray-800 text-white resize-none" required></textarea>
 
                 <!-- Image Upload -->
-                <div class="flex flex-col gap-2">
-                    <label for="image" class="font-medium">Upload Image:</label>
-                    <input id="image" type="file" class="bg-gray-800 text-white p-2 rounded-md" accept="image/*">
-                    <!-- Image Preview -->
-                    <div id="image-preview"
-                        class="w-32 h-32 bg-gray-800 rounded-md flex items-center justify-center overflow-hidden hidden">
-                        <img id="preview-img" src="" alt="Selected Image" class="object-cover">
+                <div class="flex items-center justify-center">
+                    <div class="flex flex-col gap-2">
+                        <input id="image" type="file" class="bg-gray-800 text-white p-2 rounded-md" accept="image/*">
+                        <!-- Image Preview -->
+                        <div id="image-preview" class=" w-32 h-32 bg-gray-800 rounded-md flex items-center justify-center overflow-hidden hidden">
+                            <img id="preview-img" src="" alt="Selected Image" class="object-cover">
+                        </div>
                     </div>
+                    <button type="submit" class="submit-btn w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md">
+                        Chat
+                    </button>
                 </div>
-
                 <!-- Loading Indicator -->
                 <div id="loading" class="loading-spinner mx-auto hidden"></div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md">
-                    Send
-                </button>
+                
             </form>
         </div>
     </div>
@@ -111,7 +111,7 @@
         const chatDisplay = document.getElementById("chat-display");
         const imagePreview = document.getElementById("image-preview");
         const previewImg = document.getElementById("preview-img");
-
+        const submitBtn = document.querySelector('.submit-btn')
         // Show image preview when an image is selected
         imageInput.addEventListener("change", () => {
             const file = imageInput.files[0];
@@ -143,6 +143,7 @@
             document.getElementById("loading").classList.remove("hidden");
 
             try {
+                submitBtn.classList.add('hidden')
                 const response = await fetch("/chat", {
                     method: "POST",
                     body: formData,
@@ -203,6 +204,7 @@
                 alert("An error occurred while sending the message. Please try again.");
             } finally {
                 document.getElementById("loading").classList.add("hidden");
+                submitBtn.classList.remove('hidden')
             }
         }
 
