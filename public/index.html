@@ -8,6 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script preload src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
     <style>
         .loading-spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
@@ -168,30 +171,31 @@
                 // Find the <script> tag
                 botMessage.innerHTML = data.msg;
                 chatDisplay.appendChild(botMessage);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub])
                 const scriptTag = doc.querySelectorAll('script');
-                scriptTag.forEach(script=>{
+                scriptTag.forEach(script => {
                     console.log(script)
-                if (script) {
-                    // Extract and execute the JavaScript content
-                    const scriptContent = script.textContent;
+                    if (script) {
+                        // Extract and execute the JavaScript content
+                        const scriptContent = script.textContent;
 
-                    try {
-                        // const executeCode = new Function(scriptContent);
-                        // executeCode();
-                        function addScript(scriptContent) {
-                            const script = document.createElement('script');
-                            script.textContent = scriptContent;
-                            document.body.appendChild(script);
+                        try {
+                            // const executeCode = new Function(scriptContent);
+                            // executeCode();
+                            function addScript(scriptContent) {
+                                const script = document.createElement('script');
+                                script.textContent = scriptContent;
+                                document.body.appendChild(script);
+                            }
+                            addScript(scriptContent)
+                            console.log('Script executed successfully!');
+                        } catch (err) {
+                            console.error('Error executing script:', err);
                         }
-                        addScript(scriptContent)
-                        console.log('Script executed successfully!');
-                    } catch (err) {
-                        console.error('Error executing script:', err);
                     }
-                }
-                 })
-            
-                
+                })
+
+
 
                 chatDisplay.scrollTop = chatDisplay.scrollHeight;
             } catch (error) {
