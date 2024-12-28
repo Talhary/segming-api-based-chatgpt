@@ -1,0 +1,624 @@
+<p><img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAD1CAMAAADd5TgUAAADAFBMVEVHcEwApE4ApVAAplAAok8AplEAuFoAplEApU8Ap1EAqlIArVQArFQAplAAok8Ao1QAplAAs1cApVEAqFIAqlMAplAApFEAp1EAqFIAp1IAplEAsVYAplEAp1AAplAAt1kAq1MApVAAkVIAoz8AplAAplEApVEAq1QAplAApVAApVEAp1EApVAApE0AplAAsFYApVAAplAAp1EAqVIAplAApVAAplAAr1YAp1EApVAAp1EAslcAplAAp1AArlUAplEAr1UAplAApVAApE4AplEAplEAqlMAplEApVAAp1EApVAAsVcAtVgAp1EAplEApVAAqFIAplAApVAAqVIApVAApVAApVAAqFEArVUAqVIApE8AplEAqVIAsFUAqVIAplEAqFEApVAAo08ApVAApVAApFEAplAAqVMApVAAo04ArlQApVAAplAAq1MAp1AApU8AplEAplEApVAAplAApVEAslYApVAApk4ApVAApVAApVAAplEApVAApE8ApVAAqFEApVAAplAAqVIAplEAqFEAplAAplAAn1AAplAAqFEAplEApU0AqVIAp1EAplAApVAAqFIAqVIAp1AAu1sApVAAqVIApVAAvVwAqFEAplEAp1EApVAAqlIAqFEApU8ArlQAqVIAplAAqVIAqFIAplEAplEApVAAqFIApVAAplEApFEAp1EAp1EAplAAp1EAplAAplAAqVIAqFIAqVIApVAAq1MAplAAp1AApVAAqFEApVAApVEAqVIApVAApVAAp1IAqlIAoU0Ap1EAqVIApVAAplAApVAAp04ApVAAuVoAqFEApVAAqVIAqlIAplAAqlIAp1EAplAAq1MAplAAplEApVEAqlIApVAAplAAp1EAplAAqVIApVAAplEAplAAqlIAplAApVAAqVIAqFEAqlQAplAAqVEAp1EAplEAsFUArFMArlQArFMAplAApVAArFQAqFEAp1EAqVMAqFMAq1MAq1MAwV4ApVAAqFIAsVUAqFIAqlMAq1MAsVYAsVYAslZp+iF8AAABAHRSTlMAEL7SCXT//TtV1P//mCUF4P///+hgIbH9////6CV5//+nAQO43tT/8jAe2ika1v9ZMvb/m41E//+egP9eQv+E/wK5Bw7q/+7QxXP//84u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" />
+</p>
+<p><strong>ALLAMA IQBAL OPEN UNIVERSITY ISLAMABAD</strong></p>
+<h2>Student’s Name: Saqib Javed</h2>
+<h2>Father’s Name: Javed Khan</h2>
+<h2>Student’s ID: 0000905249</h2>
+<h2>Semester: 1st Autumn, 2024</h2>
+<h2>Level: B.E.D (1.5 Years)</h2>
+<h2>Assignment No: FIRST (1ST)</h2>
+<h2>Course Code: 8603</h2>
+<h2>Subject Name: CURRICULUM DEVELOPMENT </h2>
+<p> </p>
+<p><strong><em> </em></strong></p>
+<p><strong><em>Assignment no.1</em></strong></p>
+<p><strong>Q.1 Evaluate different definitions of curriculum and elaborate on the main principles of curriculum
+        development considering theses definitions.</strong></p>
+<p><strong><em>Ans; </em>Curriculum:</strong></p>
+<p><strong>Curriculum</strong> plays important role in attaining the aims and objectives of education tend to. It
+    reflected the curricular and co-curricular trends in our institutions i.e. the courses of study, the objectives of
+    education, the methodology of teaching including teaching aids, and evaluation methods.</p>
+<p>Curriculum comes from the Latin root, Curreri which means “to run”. Which later come to stand as the “course of
+    Study”.</p>
+<p>Curriculum is the sum of all learning content, experience, and resources that one purposely selected, organized and
+    implemented by the school in pursuit of his peculiar mandate as a distinct institution of learning and human
+    development.</p>
+<p><strong>Important Definition of Curriculum:</strong></p>
+<p>The term ‘curriculum’ is defined in many ways by educators. Some use the term in very limited and specific contexts
+    while others attach very broad and general meanings. Some define it in descriptive terms, so curriculum is defined
+    in term of subjective, activities and experiences&gt;</p>
+<p><strong>Following are some important definitions of the curriculum</strong>:</p>
+<p><strong>Alberty, A and E. (1959)</strong> “curriculum is the sum of total student’s activities which the school
+    sponsors for the purpose of achieving its objectives”.</p>
+<p><strong>H. Robert Beck, and W. Walter Cook</strong>, “Curriculum is the sum of the educational experiences that
+    children have a school’.</p>
+<p><strong>Blond’s Encyclopedia (1969),</strong> “Curriculum as all the experiences a pupil has under the guidance of
+    the school”.</p>
+<p><strong>Derek Rowntree in A Dictionary of Education (1981)</strong> “Curriculum can refer to the total structure of
+    ideas and activities, developed, by an educational institution to meet the needs of student’s and to achieve desired
+    educational aims”.</p>
+<p><strong>Evaluating Definitions of Curriculum:</strong></p>
+<p>The concept of curriculum has been defined in various ways by researchers and consultants, depending on their
+    perceptions and contexts. Here are some key definitions:</p>
+<p><strong>Traditional Definition</strong></p>
+<p><strong>Bobbitt (1918):</strong> Curriculum is the series of experiences that children and youth must pass through to
+    reach adulthood.</p>
+<p><strong>Significant Principle:</strong> Curriculum is seen as a prescriptive and structured plan aimed at achieving
+    specific learning outcomes.</p>
+<p><strong>Progressive Definition</strong></p>
+<p><strong>John Dewey (1938)</strong>: Curriculum is the interaction of the learner with the environment.</p>
+<p><strong>Significant Principle:</strong> Emphasis is placed on the learner's experiences, needs, and interests,
+    focusing on active learning and critical thinking.</p>
+<p><strong>Outcome-Based Definition</strong></p>
+<p><strong>Tyler (1949):</strong> Curriculum is a plan for learning that focuses on instructive objectives.</p>
+<p><strong>Significant Principle:</strong> A systematic approach to teaching, arranging clear objectives, content
+    organization, and evaluation.</p>
+<p><strong>Modern Rounded Definitions Stenhouse (1975):</strong> Curriculum is an organized process that provides
+    teachers with guidance for what and how to teach, allowing flexibility for variation.</p>
+<p><strong>Significant Principle:</strong> Curriculum is not stationary; it changes with changing social, cultural, and
+    technological needs.</p>
+<p><strong>Main principles of curriculum based on this definition:</strong></p>
+<ol>
+    <li><strong>Leaner- centered approach:</strong></li>
+</ol>
+<p>The needs, interests, and abilities of the learners should be at the core of curriculum design. Curriculum should be
+    tailored to help students achieve their potential and cater to diverse learning styles&gt;</p>
+<ol>
+    <li><strong>Clear objectives: </strong></li>
+</ol>
+<p>Curriculum should have clear, measurable learning outcomes. These goals guide what students should know, be able to
+    do, and how they should apply their learning by the end of the course or program.</p>
+<ol>
+    <li><strong>Continuity and coherence:</strong></li>
+</ol>
+<p>The curriculum should be logically structured and progressive, ensuring that each level of learning builds on the
+    previous one. There should be a smooth transition from one concept to another across grades or subjects.</p>
+<ol>
+    <li><strong>Relevance:</strong></li>
+</ol>
+<p>The content should be meaningful and applicable to students lives, considering their current and future needs, and
+    addressing real-world problems.</p>
+<ol>
+    <li><strong>Flexibility: </strong></li>
+</ol>
+<p>The curriculum should be adaptable to change. It should respond to new knowledge, societal needs, and advances in
+    education. Flexibility allows teachers to adjust their methods based on student’s progress and challenges.</p>
+<ol>
+    <li><strong>Inclusivity:</strong></li>
+</ol>
+<p> The curriculum should be inclusive of all students, respecting diversity and providing equal opportunities for all
+    learners, regardless of background, ability, or learning differences.</p>
+<ol>
+    <li><strong>Assessment and Evaluation:</strong></li>
+</ol>
+<p>Ongoing assessment is essential for understanding whether the curriculum is effective. Regular evaluation helps in
+    identifying areas that need improvement and ensuring that learning objective are being met.</p>
+<ol>
+    <li><strong>Integration: </strong></li>
+</ol>
+<p>Subjects and topics should be interconnected. For example, science can relate to math, or history can connect with
+    literature. This general approach helps students see the broader picture and how knowledge is interrelated.</p>
+<p>In simple terms, curriculum development is about planning and creating a learning experience that meets students
+    needs, aligns with clear goals, and ensures they grow in knowledge and skill over time. It is dynamic, flexible
+    process that requires constant evaluation to stay relevant and effective.</p>
+<p><br /></p>
+<p><strong>Q. No.2 Examine the reasons that led the colonial British Government to formulate a curriculum in the
+        subcontinent. Discuss the consequences on the educational system of Pakistan.</strong>?</p>
+<p><strong>Ans: </strong>The British Colonial Government decision to formulate a curriculum in the Indian subcontinent
+    was primarily influenced by political, economic, and social factors, as well as by their need to control and govern
+    a vast and diverse colony. This curriculum, which largely focused on the transmission of western ideals and the need
+    of the colonial state, had profound consequences on the educational system of Pakistan after its independent in
+    1947.</p>
+<p><strong>Reasons for the Formulation of a Curriculum by the British Colonial Government:</strong></p>
+<ol>
+    <li><strong>Administration needs</strong><br />The British needed educated people to work in their government
+        offices. By teaching locals English and basic skills, they created a group of workers who could help manage
+        their rule.</li>
+    <li><strong>To Supper British Culture</strong><br />The British wanted to make their culture and values more popular
+        in the subcontinent. By teaching their ideas, they tried to make people think like them and deteriorate local
+        civilizations and beliefs.</li>
+    <li><strong>To Keep Control</strong><br />The curriculum was designed to avoid teaching critical thinking or ideas
+        of freedom. This helped the British stop the rise of leaders who might challenge their rule.</li>
+    <li><strong>Political Control:</strong></li>
+</ol>
+<p>The British recognized the importance of education in consolidating their rule over India. By controlling the
+    curriculum, they could ensure that the education system aligned with their colonial interests. This allowed them to
+    shape the ideological outlook of the population, particularly the elite, ensuring loyalty to the colonial state. The
+    British aimed to create a class of educated Indians who would assist in administration and uphold British rule.</p>
+<ol>
+    <li><strong>For Economic Interests:</strong><br />The British focused on teaching basic skills like reading,
+        writing, and arithmetic. This helped people get jobs in offices or factories but didn’t encourage advanced
+        education that could lead to local innovation.</li>
+    <li><strong>To Create Social Divides/control</strong><br />The British education system mainly benefited the wealthy
+        and urban populations. This created a divide between the educated elite, who often supported British interests,
+        and the rest of the population.</li>
+    <li><strong>Promotion of English language</strong></li>
+</ol>
+<p>English was promoted as the medium of instruction in schools and universities positioning it as the language of power
+    and knowledge. This not only helped the British control governance but also gave them influence in shaping the
+    cultural and academic property of India.</p>
+<p><strong>Consequences of the British Curriculum on Pakistan’s Education System</strong></p>
+<ol>
+    <li><strong>Language Barrier</strong><br />English became the language of power and success. Schools teaching in
+        English became better funded and respected, while those teaching in local languages were neglected. This created
+        inequality in education.</li>
+    <li><strong>Focus on Memorization</strong><br />The British curriculum emphasized rote learning rather than creative
+        or critical thinking. This tradition continued in Pakistan, limiting innovation and problem-solving skills.</li>
+    <li><strong>Inequality in Access to Education</strong><br />During British rule, only a small group of people had
+        access to quality education. After independence, this system remained, creating a gap between rich and poor in
+        access to schools and opportunities.</li>
+    <li><strong>Loss of Local Culture</strong><br />The focus on British ideas and education overshadowed local
+        traditions, languages, and knowledge systems. This caused a decline in the teaching and promotion of Pakistan’s
+        cultural heritage.</li>
+    <li><strong>Creation of Elitism</strong><br />The colonial system created an elite class that benefited from English
+        education. In Pakistan, this class system persisted, with English-speaking elites having more opportunities than
+        those educated in Urdu or regional languages.</li>
+    <li><strong>Neglect of Scientific and Technical Education</strong><br />The British didn’t promote higher education
+        in science or technology because they didn’t want the subcontinent to develop industries that could compete with
+        Britain. This left Pakistan struggling to build a strong foundation in these areas after independence.</li>
+    <li><strong>Challenges in Reform</strong><br />Efforts to improve the curriculum in Pakistan have been slow because
+        the colonial system deeply influenced the education structure. Divisions between rural and urban areas and
+        public and private schools make it harder to create a fair system.</li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p>The British curriculum was designed to serve their interests, not to develop the local population. After
+    independence, Pakistan inherited this unequal system, which has continued to impact its education. These challenges
+    remain present in Pakistan today, as the country struggles to address educational inequities, create a curriculum
+    that reflects its diverse culture and history, and improve the quality of education for all citizens. To overcome
+    these challenges, Pakistan needs reforms that focus on equality, critical thinking, cultural preservation, and
+    scientific advancement.</p>
+<p><strong>Q.No.3 compare and contrast different foundations of curriculum development Analyze how culture and society
+        on curriculum development in details</strong>.</p>
+<p><strong>Ans: Curriculums Development </strong></p>
+<p>Curriculum development refers to the process of designing, organizing, and planning the content, structure, and
+    delivery of educational programs and courses.it involves the creation of learning objective, selecting appropriate
+    teaching materials, and determining instructional strategies that align with desired educational outcomes. The goals
+    of curriculum development are to ensure that students acquire the knowledge, skills, and competencies necessary to
+    meet academic standards and prepare for future challenges. The process typically includes stages such as needs
+    assessment, goal, setting, content selection, designing assessments, and ongoing evaluation to improve the
+    curriculum over time.</p>
+<p><strong>Comparison and contrast of Different Foundation of curriculum Development</strong>: </p>
+<p>Curriculum development is grounded in various foundational perspective, each offering a unique approach to designing
+    educational programs. These foundations can be broadly categorized into philosophical, psychological, Sociological,
+    and historical foundations. Below is a comparison and contrast of these foundational perspectives:</p>
+<p><strong>1.Philosophical Foundations:</strong></p>
+<p><strong>Definition;</strong> philosophy examines the purpose and goals of education, guiding the values and
+    principles behind curriculum development. It’s addresses’ the “why” of education.</p>
+<p><strong>Key Theories:</strong> Includes various schools of thought such as essentialism (focus on core knowledge),
+    perennialism (focus on timeless truths), progressivism (focus on student interests and real-life experience), and
+    reconstructionism (focus on social change and reform).</p>
+<p><strong>Impact of curriculum:</strong> Philosophy determines what knowledge is worth teaching, how it should be
+    taught, and how it should be assessed.</p>
+<p><strong>Contrast:</strong> while essentialism emphasizes traditional subjects and rote learning, progressivism
+    advocates for student-centered learning, with hands-on activities.</p>
+<p><strong>2.Psychological foundations:</strong></p>
+<p><strong>Definition:</strong> Psychological foundations are concerned with how learning occurs, addressing the “how”
+    of education. It explores cognitive, emotional, and social aspects of learners.</p>
+<p><strong>Key Theories:</strong> includes behaviorism (learning through stimuli and responses), constructivism
+    (learnings as a process of constructing knowledge), and cognitive psychology (focus on mental processes like memory,
+    perception, and problem-solving). </p>
+<p><strong>Impact of curriculum:</strong> This foundation influences teaching methods, the sequencing of lessons, and
+    the design of activities that cater to the different learning styles.</p>
+<p><strong>Contrasts:</strong> behaviorism might lead to a more structured, teacher directed curriculum, while
+    constructivism promotes inquiry-based student driven learnings.</p>
+<p><strong>3.Sociological Foundations:</strong></p>
+<p><strong>Definition: </strong>Sociological foundations investigate the relationship between education and society. It
+    explores how curriculum can respond to social needs, trends, and structures.</p>
+<p><strong>Key Theories: </strong>Includes functionalism (education role in maintaining social stability), critical
+    theory (education is a tool for social changes), and postmodernism (focus on deconstructing dominant narratives).
+</p>
+<p><strong>Impacts of curriculum: </strong>Sociological foundations advocate for the curriculum design that address
+    issues like social justice, equity, and inclusion. It also considers influence of cultural diversity and societal
+    values.</p>
+<p><strong>Contrasts: </strong>Functionalism might emphasize curricula to maintain societal norms, while critical theory
+    challenges these norms and promotes curricula for empowerment and transformation.</p>
+<p><strong>4.Historical Foundations:</strong></p>
+<p><strong>Definition:</strong> Historical Foundations examine the evolution of curriculum over time and its context
+    within specific historical, cultural, and political settings.</p>
+<p><strong>Key Theories: </strong>Looks at how past educational movements, policies, and figures have shaped current
+    practices and curricula.<br /><strong>Impact on Curriculum: </strong>Historical foundations help educators
+    understand the development of certain educational practices and provide insight into how past events influence
+    contemporary curriculum decisions.</p>
+<p><strong>Contrasts: </strong>While historical foundations can show the continuity of educational principles, they may
+    also highlight shifts in educational priorities due to the political or economic factors.</p>
+<p><strong>How Culture and Society Influence Curriculum Development</strong></p>
+<p>Culture and society are powerful forces that directly shape curriculum by determining what is taught, how it is
+    taught, and why it is taught.</p>
+<p><strong>1. Cultural Influence</strong></p>
+<ul>
+    <li><strong>Definition:</strong> Culture refers to the shared values, beliefs, customs, traditions, and language of
+        a group of people.</li>
+    <li><strong>Impact on Curriculum:</strong>
+        <ul>
+            <li><strong>Content:</strong> The curriculum reflects the dominant culture’s values and priorities, such as
+                history, literature, and language. For example, American schools emphasize U.S. history, while French
+                schools prioritize French culture.</li>
+            <li><strong>Language:</strong> The medium of instruction often reflects cultural priorities. Multilingual
+                societies may include bilingual education to preserve cultural identity.</li>
+            <li><strong>Diversity:</strong> In multicultural societies, curricula must address the representation of
+                different cultural groups to foster inclusion and mutual respect.</li>
+            <li><strong>Ethics and Morals:</strong> Cultural norms influence the values taught in schools, such as
+                respect, honesty, or cooperation.</li>
+            <li><strong>Globalization:</strong> Exposure to global cultures can lead to the integration of international
+                perspectives alongside local traditions.</li>
+        </ul>
+    </li>
+    <li><strong>Examples:</strong>
+        <ul>
+            <li>In Japan, respect for elders and group harmony is emphasized, influencing both classroom behavior and
+                curriculum design.</li>
+            <li>In multicultural countries like Canada, the curriculum includes indigenous studies to recognize and
+                honor native cultures.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>2. Societal Influence</strong></p>
+<ul>
+    <li><strong>Definition:</strong> Society refers to the larger organized community in which individuals live,
+        including its economic, political, and technological systems.</li>
+    <li><strong>Impact on Curriculum:</strong>
+        <ul>
+            <li><strong>Economic Needs:</strong> Curricula align with the demands of the job market, such as STEM
+                (Science, Technology, Engineering, and Mathematics) education to prepare students for high-demand
+                careers.</li>
+            <li><strong>Social Issues:</strong> Schools address pressing societal challenges, such as environmental
+                sustainability, gender equality, and mental health awareness.</li>
+            <li><strong>Technological Advances:</strong> The rise of digital tools has led to the inclusion of coding,
+                digital literacy, and online safety in many curricula.</li>
+            <li><strong>Government Policies:</strong> Governments shape curricula through laws and standards, often
+                reflecting societal values and political priorities.</li>
+            <li><strong>Global Trends:</strong> As societies become interconnected, schools integrate global issues like
+                climate change, human rights, and international relations into the curriculum.</li>
+        </ul>
+    </li>
+    <li><strong>Examples:</strong>
+        <ul>
+            <li>In Finland, the education system focuses on equality and collaboration, reflecting societal values of
+                equity and inclusivity.</li>
+            <li>In developing countries, vocational training is emphasized to address economic needs and reduce
+                unemployment.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>Comparison of Cultural and Societal Influence</strong></p>
+<table>
+    <thead>
+        <tr>
+            <th>
+                <p><strong>Aspect</strong></p>
+            </th>
+            <th>
+                <p><strong>Culture</strong></p>
+            </th>
+            <th>
+                <p><strong>Society</strong></p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <p><strong>Definition</strong></p>
+            </td>
+            <td>
+                <p>Traditions, values, language, and identity</p>
+            </td>
+            <td>
+                <p>The broader social, political, and economic systems</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Focus</strong></p>
+            </td>
+            <td>
+                <p>Preservation and promotion of heritage</p>
+            </td>
+            <td>
+                <p>Addressing current and future societal needs</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Curriculum Content</strong></p>
+            </td>
+            <td>
+                <p>Reflects cultural norms and diversity</p>
+            </td>
+            <td>
+                <p>Includes skills and knowledge for economic and civic roles</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Challenges </p>
+            </td>
+            <td>
+                <p>Balance value with globally influences.</p>
+            </td>
+            <td>
+                <p>Balance demand with local priorities.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Analysis</strong></p>
+<p>While the foundations provide theoretical underpinnings, the practical implementation of curricula is deeply embedded
+    in societal and cultural contexts. For instance, progressive societies may favor a constructivist approach,
+    emphasizing critical thinking and innovation. Conversely, traditional societies may adhere to essentialist or
+    perennialism perspectives, emphasizing cultural preservation. Balancing these influences ensures curricula are
+    relevant, inclusive, and adaptable to future needs.</p>
+<p><strong>Conclusion</strong></p>
+<p>The development of a curriculum is deeply rooted in the interplay of foundational theories and real-world influences
+    from culture and society. Philosophical, psychological, sociological, and historical foundations guide the
+    theoretical framework, while culture and society shape practical implementation. By reflecting cultural values and
+    addressing societal needs, curricula ensure education remains relevant, inclusive, and forward-looking. This balance
+    is essential for preparing learners to navigate and contribute to their communities and the broader world.</p>
+<p><strong>Q.4 Discuss the criteria for content selection. Explain the necessity of evaluation for curriculum
+        improvement</strong>.</p>
+<p><strong>Ans: Content Selection:</strong></p>
+<p><strong>Content selection</strong> refers to the process of choosing and organizing subject matter, concepts, skills,
+    and activities to include in a curriculum or educational program. It is a critical step in curriculum development,
+    ensuring that the learning material is relevant, appropriate, and effective in achieving educational goals.</p>
+<p>The selected content serves as the foundation for teaching and learning activities, and its quality directly impacts
+    the learning outcomes for students. Content selection involves evaluating and prioritizing what knowledge, skills,
+    attitudes, and values should be imparted to learners within the constraints of time, resources, and curriculum
+    objectives.</p>
+<p><strong>Criteria for Content Selection in Curriculum Development:</strong></p>
+<p>Content selection is a critical step in designing an effective curriculum. It ensures that the material meets the
+    educational goals and addresses the needs of learners. The following are the primary criteria for content selection:
+</p>
+<p><strong>1. Relevance</strong></p>
+<ul>
+    <li>Content must align with the learning objectives and intended outcomes.</li>
+    <li>It should address the current and future needs of learners, society, and the workplace.</li>
+    <li>Topics must relate to the learners' prior knowledge and experiences to foster understanding.</li>
+</ul>
+<p><strong>2. Significance</strong></p>
+<ul>
+    <li>Content should be significant in contributing to the learner's personal, social, and academic growth.</li>
+    <li>It must include knowledge, skills, and attitudes that are crucial for the learner's development.</li>
+</ul>
+<p><strong>3. Validity</strong></p>
+<ul>
+    <li>The content should be accurate, up-to-date, and reflect current knowledge in the discipline.</li>
+    <li>It should be free from biases, outdated information, and unsupported claims.</li>
+</ul>
+<p><strong>4. Learnability</strong></p>
+<ul>
+    <li>Content must be within the intellectual and emotional capacity of learners, ensuring they can grasp and apply it
+        effectively.</li>
+    <li>It should match the developmental stage of the students and their learning readiness.</li>
+</ul>
+<p><strong>5. Utility</strong></p>
+<ul>
+    <li>The material should be useful in real-life contexts, promoting practical application.</li>
+    <li>It must empower learners with skills and knowledge that can be utilized in their personal and professional
+        lives.</li>
+</ul>
+<p><strong>6. Feasibility</strong></p>
+<ul>
+    <li>Content must be teachable within the constraints of time, resources, and the teacher's expertise.</li>
+    <li>It should consider the available infrastructure, technology, and support systems.</li>
+</ul>
+<p><strong>7. Interest</strong></p>
+<ul>
+    <li>Selected topics should engage learners and stimulate their curiosity.</li>
+    <li>Interesting content enhances motivation and the overall learning experience.</li>
+</ul>
+<p><strong>8. Balance</strong></p>
+<ul>
+    <li>The curriculum should provide a balanced representation of various disciplines and perspectives.</li>
+    <li>This includes addressing cultural, social, and gender diversity to avoid any biases.</li>
+</ul>
+<p><strong>Necessity of Evaluation for Curriculum Improvement:</strong></p>
+<p>Evaluation plays a pivotal role in ensuring the curriculum remains effective and relevant. Here are the reasons why
+    evaluation is necessary:</p>
+<p><strong>1. Assessment of Effectiveness</strong></p>
+<ul>
+    <li>Evaluation helps determine whether the curriculum meets its intended objectives and outcomes.</li>
+    <li>It identifies strengths and weaknesses in content, pedagogy, and assessment methods.</li>
+</ul>
+<p><strong>2. Adaptation to Changes</strong></p>
+<ul>
+    <li>Societal needs, technological advancements, and industry demands evolve over time.</li>
+    <li>Regular evaluation ensures the curriculum is updated to reflect these changes and remains aligned with global
+        trends.</li>
+</ul>
+<p><strong>3. Improvement of Learning Outcomes</strong></p>
+<ul>
+    <li>By identifying gaps in student performance and understanding, evaluation helps in refining instructional
+        strategies and materials.</li>
+    <li>It ensures that students achieve the desired competencies.</li>
+</ul>
+<p><strong>4. Feedback Mechanism</strong></p>
+<ul>
+    <li>Evaluation provides valuable feedback from stakeholders, including students, teachers, parents, and industry
+        representatives.</li>
+    <li>This feedback aids in making informed decisions about curriculum revisions.</li>
+</ul>
+<p><strong>5. Resource Optimization</strong></p>
+<ul>
+    <li>It ensures that resources like time, funding, and materials are effectively utilized.</li>
+    <li>Evaluation can highlight areas where efficiency can be improved.</li>
+</ul>
+<p><strong>6. Compliance with Standards</strong></p>
+<ul>
+    <li>Evaluation ensures the curriculum meets local, national, and international educational standards.</li>
+    <li>It aligns with accreditation requirements and institutional policies.</li>
+</ul>
+<p><strong>7. Encouragement of Innovation</strong></p>
+<ul>
+    <li>Through evaluation, educators can identify opportunities for introducing innovative teaching methods, tools, and
+        approaches.</li>
+    <li>It fosters creativity and adaptability in curriculum design.</li>
+</ul>
+<p><strong>Conclusion</strong></p>
+<p>Content selection and curriculum evaluation are integral to the education system. By adhering to defined criteria for
+    content selection, educators can ensure that the curriculum is meaningful, engaging, and effective. Continuous
+    evaluation helps maintain the curriculum's relevance, address emerging challenges, and enhance the overall learning
+    experience for students.</p>
+<p><strong>Q.5 What are the various approaches to content organization, and which one is best suited for content
+        organization in Pakistan? Provide reasons for your choice?</strong></p>
+<p><strong>Ans: Content Organization;</strong></p>
+<p>Content organization is the process of arranging and structuring educational material in a curriculum to ensure a
+    logical, systematic, and effective flow of information. It involves sequencing topics, concepts, skills, and
+    activities in a way that promotes learners' understanding, retention, and progression in knowledge and skills.</p>
+<p>Effective content organization bridges the gap between what learners already know and what they need to learn,
+    enabling a smooth and meaningful learning<strong> </strong>experience.</p>
+<p><strong>Approaches to Content Organization in Curriculum Development:</strong></p>
+<p>Content organization involves structuring and sequencing the curriculum material in a way that facilitates learning.
+    It ensures that students engage with content systematically, moving from simple to complex ideas, and develop the
+    desired skills and knowledge effectively.</p>
+<p>Below are the various approaches to content organization:</p>
+<p><strong>1. Chronological Approach</strong></p>
+<ul>
+    <li>Content is organized according to time, historical events, or a sequence of development.</li>
+    <li><strong>Example</strong>: In history, content is arranged from ancient to modern times.</li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Easy to follow and logical for subjects with a timeline.</li>
+            <li>Provides context and helps learners understand progression over time.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>Limited applicability for subjects that do not have a historical basis.</li>
+            <li>Can become monotonous if not combined with other approaches.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>2. Topical Approach</strong></p>
+<ul>
+    <li>Content is arranged around specific topics or themes.</li>
+    <li><strong>Example</strong>: In science, chapters might focus on topics like energy, ecosystems, or human anatomy.
+    </li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Focuses on in-depth exploration of each topic.</li>
+            <li>Flexible and adaptable to different subjects.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>May lacks continuity if topics are not interconnected.</li>
+            <li>Can lead to fragmented knowledge without proper integration.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>3. Spiral Approach</strong></p>
+<ul>
+    <li>Content is revisited at increasing levels of complexity over time.</li>
+    <li><strong>Example</strong>: In mathematics, basic algebra concepts are introduced early and revisited with greater
+        complexity in higher grades.</li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Builds on prior knowledge and reinforces learning.</li>
+            <li>Suitable for long-term retention of concepts.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>Requires careful planning and alignment across grade levels.</li>
+            <li>May confuse learners if the complexity increases too quickly.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>4. Logical/Sequential Approach</strong></p>
+<ul>
+    <li>Content is organized in a step-by-step manner, progressing logically from simple to complex.</li>
+    <li><strong>Example</strong>: In grammar, learning starts with basic sentence structure and moves to complex syntax.
+    </li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Ensures clear progression and understanding.</li>
+            <li>Reduces cognitive overload by introducing new concepts gradually.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>Less emphasis on interdisciplinary connections.</li>
+            <li>May not address learners' interests or contextual needs.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>5. Integrated Approach</strong></p>
+<ul>
+    <li>Content from various disciplines is integrated around common themes or problems.</li>
+    <li><strong>Example</strong>: A theme like "sustainability" includes science (renewable energy), social studies
+        (policies), and economics (cost analysis).</li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Promotes interdisciplinary learning and real-world application.</li>
+            <li>Encourages critical thinking and problem-solving.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>Requires significant effort in planning and coordination.</li>
+            <li>May dilute the depth of individual subjects.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>6. Learner-Centered Approach</strong></p>
+<ul>
+    <li>Content is organized based on learners' needs, interests, and developmental stages.</li>
+    <li><strong>Example</strong>: Personalized projects or activities reflecting students' preferences.</li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Increases engagement and motivation.</li>
+            <li>Caters to diverse learning styles and paces.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>Difficult to implement in large classrooms.</li>
+            <li>Requires skilled teachers and adequate resources.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>7. Thematic Approach</strong></p>
+<ul>
+    <li>Content is grouped under broad themes that cut across various subjects.</li>
+    <li><strong>Example</strong>: Themes like "water," "culture," or "technology" integrate content from science, social
+        studies, and language arts.</li>
+    <li><strong>Advantages</strong>:<ul>
+            <li>Encourages holistic understanding.</li>
+            <li>Makes learning relevant to real-world issues.</li>
+        </ul>
+    </li>
+    <li><strong>Disadvantages</strong>:<ul>
+            <li>Risk of oversimplification.</li>
+            <li>Challenging to align with subject-specific objectives.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>Best Approach for Pakistan my opinion: </strong></p>
+<p><strong>Spiral Approach</strong></p>
+<p>The <strong>Spiral Approach</strong> is the most suitable for content organization in Pakistan, considering its
+    educational context. Here are the reasons for this choice:</p>
+<p><strong>1. Alignment with Educational Standards</strong></p>
+<ul>
+    <li>Pakistan's national curriculum emphasizes the development of foundational skills in early grades, which are then
+        expanded upon in later grades. The spiral approach naturally supports this progression.</li>
+</ul>
+<p><strong>2. Facilitates Long-Term Learning</strong></p>
+<ul>
+    <li>By revisiting topics at increasing levels of complexity, the spiral approach ensures that learners retain and
+        deepen their understanding of key concepts over time.</li>
+</ul>
+<p><strong>3. Addresses Diversity</strong></p>
+<ul>
+    <li>Pakistan has a diverse student population with varying learning paces and backgrounds. The spiral approach
+        accommodates this by allowing learners to reinforce previous knowledge before tackling more complex ideas.</li>
+</ul>
+<p><strong>4. Encourages Mastery</strong></p>
+<ul>
+    <li>Core subjects like mathematics, science, and language require mastery of foundational skills, which the spiral
+        approach effectively fosters.</li>
+</ul>
+<p><strong>5. Supports Resource Constraints</strong></p>
+<ul>
+    <li>The spiral approach allows for gradual implementation and adaptation without overwhelming educators or learners,
+        making it practical in resource-constrained environments.</li>
+</ul>
+<p><strong>6. Global Relevance</strong></p>
+<ul>
+    <li>Many countries with successful education systems use the spiral approach, making it a globally recognized method
+        that Pakistan can adopt and adapt.</li>
+</ul>
+<p><strong>Conclusion</strong></p>
+<p>While other approaches like the integrated or thematic approach offer valuable insights, the spiral approach's focus
+    on building and reinforcing knowledge incrementally aligns well with Pakistan's educational needs and system
+    capabilities. It provides a structured yet flexible framework for curriculum organization, ensuring that learners
+    achieve depth and continuity in their education.</p>
+<p><strong> The End:</strong></p>

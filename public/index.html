@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat with Devil</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script preload src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .loading-spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
@@ -15,9 +17,15 @@
             height: 30px;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -52,7 +60,8 @@
                     <label for="image" class="font-medium">Upload Image:</label>
                     <input id="image" type="file" class="bg-gray-800 text-white p-2 rounded-md" accept="image/*">
                     <!-- Image Preview -->
-                    <div id="image-preview" class="w-32 h-32 bg-gray-800 rounded-md flex items-center justify-center overflow-hidden hidden">
+                    <div id="image-preview"
+                        class="w-32 h-32 bg-gray-800 rounded-md flex items-center justify-center overflow-hidden hidden">
                         <img id="preview-img" src="" alt="Selected Image" class="object-cover">
                     </div>
                 </div>
@@ -61,14 +70,13 @@
                 <div id="loading" class="loading-spinner mx-auto hidden"></div>
 
                 <!-- Submit Button -->
-                <button type="submit"
-                    class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md">
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md">
                     Send
                 </button>
             </form>
         </div>
     </div>
-    
+
     <script>
         let sessionId = null;
 
@@ -153,8 +161,37 @@
 
                 const botMessage = document.createElement("div");
                 botMessage.className = "bg-gray-600 p-2 my-2 rounded-md";
-                botMessage.innerHTML = marked.parse(data.msg);
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data.msg, 'text/html');
+
+                // Find the <script> tag
+                botMessage.innerHTML = data.msg;
                 chatDisplay.appendChild(botMessage);
+                const scriptTag = doc.querySelectorAll('script');
+                scriptTag.forEach(script=>{
+                    console.log(script)
+                if (script) {
+                    // Extract and execute the JavaScript content
+                    const scriptContent = script.textContent;
+
+                    try {
+                        // const executeCode = new Function(scriptContent);
+                        // executeCode();
+                        function addScript(scriptContent) {
+                            const script = document.createElement('script');
+                            script.textContent = scriptContent;
+                            document.body.appendChild(script);
+                        }
+                        addScript(scriptContent)
+                        console.log('Script executed successfully!');
+                    } catch (err) {
+                        console.error('Error executing script:', err);
+                    }
+                }
+                 })
+            
+                
 
                 chatDisplay.scrollTop = chatDisplay.scrollHeight;
             } catch (error) {
@@ -186,4 +223,5 @@
         };
     </script>
 </body>
+
 </html>
