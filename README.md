@@ -1,7 +1,7 @@
 
 
 
-# Chat with Devil
+# Chat with ChATGPT 4o With Images
 
 A web-based chat application that supports Markdown messages, image uploads, and persistent chat sessions. It integrates with the Segmind API for advanced backend processing.
 
@@ -156,7 +156,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you encounter any issues, feel free to open an issue in the GitHub repository or contact support at [Segmind](https://segmind.com).
 
 Happy Coding!
-```
+
 
 
 
