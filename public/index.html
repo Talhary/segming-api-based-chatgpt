@@ -76,7 +76,7 @@
         async function initializeChat() {
             document.getElementById("loading").classList.remove("hidden");
             try {
-                const response = await fetch("http://localhost:5000/create-chat", { method: "POST" });
+                const response = await fetch("/create-chat", { method: "POST" });
                 const data = await response.json();
                 sessionId = data.sessionId;
                 console.log("Session ID:", sessionId);
@@ -132,7 +132,7 @@
             document.getElementById("loading").classList.remove("hidden");
 
             try {
-                const response = await fetch("http://localhost:5000/chat", {
+                const response = await fetch("/chat", {
                     method: "POST",
                     body: formData,
                 });
