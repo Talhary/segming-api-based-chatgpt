@@ -37,28 +37,29 @@
     <!-- Header -->
 
     <header
-    class="bg-gray-800 w-full p-4 text-center relative border-b border-purple-500/30 shadow-lg shadow-purple-500/20">
-    <div class="flex flex-col md:flex-row items-center justify-between">
-        <h1
-            class="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text animate-pulse mb-2 md:mb-0">
-            Chat with Functional Chatgpt 4o
-        </h1>
-        <div class="flex gap-1 md:gap-2">
-            <a href="/chatgpt.html" 
-               class="bg-blue-600 hover:bg-blue-700 text-white px-2 md:px-4 py-1 md:py-2 rounded-lg
-               transform hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50
-               flex items-center justify-center text-xs md:text-sm font-bold">
-               Click to chat with Simple ChatGPT
-            </a>
-            <button id="new-chat-btn" 
-                class="bg-purple-600 hover:bg-purple-700 text-white w-8 h-8 md:w-10 md:h-10 rounded-full 
-                transform hover:scale-110 transition-all duration-300 shadow-lg shadow-purple-500/50
-                hover:rotate-180 flex items-center justify-center text-lg md:text-xl font-bold">
-                <span class="select-none"> +</span>
-            </button>
+        class="bg-gray-800 w-full p-4 text-center relative border-b border-purple-500/30 shadow-lg shadow-purple-500/20">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <h1
+                class="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text animate-pulse mb-2 md:mb-0">
+                Chat with Simple Chatgpt 4o
+            </h1>
+            <div class="flex gap-1 md:gap-2">
+                <a href="/index.html" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-2 md:px-4 py-1 md:py-2 rounded-lg
+                   transform hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50
+                   flex items-center justify-center text-xs md:text-sm font-bold">
+                   Click to chat with Functional ChatGPT
+                </a>
+                <button id="new-chat-btn" 
+                    class="bg-purple-600 hover:bg-purple-700 text-white w-8 h-8 md:w-10 md:h-10 rounded-full 
+                    transform hover:scale-110 transition-all duration-300 shadow-lg shadow-purple-500/50
+                    hover:rotate-180 flex items-center justify-center text-lg md:text-xl font-bold">
+                    <span class="select-none">+</span>
+                </button>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
+
     <style>
         @keyframes float {
             0% {
@@ -185,7 +186,7 @@
                     <button type="submit"
                         class="submit-btn bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-purple-500/20">
                         <span>Send</span>
-                        
+
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -201,7 +202,7 @@
                     }
                 </script>
                 <!-- Loading Indicator -->
-                
+
 
                 <!-- Submit Button -->
 
@@ -273,7 +274,7 @@
 
             try {
                 submitBtn.classList.add('hidden')
-                const response = await fetch("/chat", {
+                const response = await fetch("/chat-normal", {
                     method: "POST",
                     body: formData,
                 });
@@ -293,39 +294,37 @@
                 }
 
                 const botMessage = document.createElement("div");
-                botMessage.className = "bg-gray-600 p-2 my-2 rounded-md";
+                botMessage.className = "bg-gray-600 p-2 my-2 rounded-md prose prose-invert";
 
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data.msg, 'text/html');
+                // Parse markdown content using marked
+                const parsedContent = marked.parse(data.msg);
+                botMessage.innerHTML = parsedContent;
 
-                // Find the <script> tag
-                botMessage.innerHTML = data.msg;
+                // Add copy button to code blocks
+                const codeBlocks = botMessage.querySelectorAll('pre code');
+                codeBlocks.forEach(codeBlock => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'relative';
+
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'absolute top-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-2 py-1 rounded text-sm';
+                    copyButton.textContent = 'Copy';
+                    copyButton.onclick = () => {
+                        navigator.clipboard.writeText(codeBlock.textContent);
+                        copyButton.textContent = 'Copied!';
+                        setTimeout(() => {
+                            copyButton.textContent = 'Copy';
+                        }, 2000);
+                    };
+
+                    codeBlock.parentElement.parentNode.insertBefore(wrapper, codeBlock.parentElement);
+                    wrapper.appendChild(codeBlock.parentElement);
+                    wrapper.appendChild(copyButton);
+                });
+
                 chatDisplay.appendChild(botMessage);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub])
-                const scriptTag = doc.querySelectorAll('script');
-                scriptTag.forEach(script => {
-                    console.log(script)
-                    if (script) {
-                        // Extract and execute the JavaScript content
-                        const scriptContent = script.textContent;
-
-                        try {
-                            // const executeCode = new Function(scriptContent);
-                            // executeCode();
-                            function addScript(scriptContent) {
-                                const script = document.createElement('script');
-                                script.textContent = scriptContent;
-                                document.body.appendChild(script);
-                            }
-                            addScript(scriptContent)
-                            console.log('Script executed successfully!');
-                        } catch (err) {
-                            console.error('Error executing script:', err);
-                        }
-                    }
-                })
-
-
+                // Process any LaTeX content
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
                 chatDisplay.scrollTop = chatDisplay.scrollHeight;
             } catch (error) {
@@ -336,7 +335,6 @@
                 submitBtn.classList.remove('hidden')
             }
         }
-
         chatForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             const message = messageInput.value.trim();

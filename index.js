@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto'; // For generating unique IDs
-import { chat } from './chat.js'; // Adjust path accordingly
+import { chat, chatNormal } from './chat.js'; // Adjust path accordingly
 import 'dotenv/config';
 
 const app = express();
@@ -87,7 +87,42 @@ app.post('/chat', upload.single('img'), async (req, res) => {
         res.status(500).json({ error: 'An error occurred while processing your request' });
     }
 });
+app.post('/chat-normal', upload.single('img'), async (req, res) => {
+    const { msg, sessionId } = req.body;
+    const imgFile = req.file;
 
+    try {
+        if (!sessionId) {
+            return res.status(400).json({ error: 'Session ID is required' });
+        }
+
+        // Retrieve chatId from sessionId
+        const chatMappings = JSON.parse(fs.readFileSync(CHAT_MAPPING_FILE, { encoding: 'utf-8' }));
+        const chatId = chatMappings[sessionId];
+        if (!chatId) {
+            return res.status(404).json({ error: 'Invalid session ID' });
+        }
+
+        let imgBase64 = null;
+
+        if (imgFile) {
+            imgBase64 = await convertImageToBase64(path.join(imgFile.path));
+            fs.unlinkSync(path.join(imgFile.path)); // Clean up uploaded file after conversion
+        }
+
+        const response = await chatNormal(msg, imgBase64, chatId);
+
+        res.status(200).json({
+            msg: response?.content || 'No response from the chat function',
+        });
+    } catch (error) {
+        console.error('Error processing chat:', error);
+        if (error.message.includes('File type not allowed')) {
+            return res.status(400).json({ error: error.message });
+        }
+        res.status(500).json({ error: 'An error occurred while processing your request' });
+    }
+});
 // Helper function to convert image to Base64
 async function convertImageToBase64(imagePath) {
     try {

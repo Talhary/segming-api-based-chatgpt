@@ -76,7 +76,61 @@ const chat = async (msg, img, id) => {
         return {err:true,msg:error?.response || 'error'}
     }
 }
-
+export const chatNormal = async (msg, img, id) => {
+    try {
+        if (!msg || !id) return { msg: 'Please provide id and msg', err: true }
+        const data = {
+            "messages": []
+        }
+        const chat_path = path.join(CHAT_FOLDER, `${id}.json`)
+        if (!fs.existsSync(chat_path)) {
+            fs.writeFileSync((chat_path), JSON.stringify([
+                {
+                    "role": "system",
+                    "content": "Helpfull chatbot build by @Talhariaz. your official website is talhariaz.net. People can upload images to you also." 
+                }
+            ]))
+        }
+        const old_chat = JSON.parse(fs.readFileSync(chat_path, { encoding: "utf-8" }))
+        data.messages.push(...old_chat)
+        if (!img)
+            data.messages.push({
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": msg
+                    },
+                ]
+            })
+        else {
+            data.messages.push({
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": msg
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": img
+                        }
+                    }
+                ]
+            })
+        }
+        
+        const response = await axios.post(url, data, { headers: { 'x-api-key': api_key } });
+        data.messages.push({"role":"assistant",content:response.data.choices[0].message?.content})
+        fs.writeFileSync(chat_path, JSON.stringify(data.messages))
+        console.log(response.data.choices[0].message);
+        return response.data.choices[0].message
+    } catch (error) {
+        console.error(error)
+        return {err:true,msg:error?.response || 'error'}
+    }
+}
 export  {chat}
 
-chat('give me a table of students data','','q232')
+// chat('give me a table of students data','','q232')
